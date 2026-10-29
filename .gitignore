@@ -1,0 +1,16 @@
+
+# Python virtual environments
+qsvm_env/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

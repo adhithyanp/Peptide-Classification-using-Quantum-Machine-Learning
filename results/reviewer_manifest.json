@@ -1,0 +1,70 @@
+{
+  "python": "3.11.9",
+  "scikit-learn": "1.8.0",
+  "qiskit": "2.3.0",
+  "lightgbm": {
+    "n_estimators": 300,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "xgboost": "3.2.0",
+  "n_train": 812,
+  "n_test": 202,
+  "features": [
+    "A",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "K",
+    "L",
+    "M",
+    "N",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "V",
+    "W",
+    "Y",
+    "net_charge",
+    "pos_neg_ratio",
+    "hydrophobicity"
+  ],
+  "top4_features_final_model_qubit_order": [
+    "hydrophobicity",
+    "K",
+    "L",
+    "A"
+  ],
+  "circuit": "RY -> CNOT ring -> RX(2x) -> CNOT ring -> RY, 4 qubits, statevector simulation (exact, no shot noise)",
+  "observables": [
+    "Z0",
+    "Z1",
+    "Z2",
+    "Z3",
+    "Z0Z1",
+    "Z1Z2",
+    "Z2Z3"
+  ],
+  "angle_scaling": "MinMax to [0, pi], fitted on training part only",
+  "classical_scaling": "MinMax to [0, 1], fitted on training part only",
+  "svm": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "probability": true,
+    "random_state": 42
+  },
+  "meta_learner": "LogisticRegression (default settings)",
+  "stacking": "5-fold out-of-fold probabilities; scaling, top-4 selection and QFE re-fitted inside every fold",
+  "decision_threshold": 0.5,
+  "official_split_seed": 42,
+  "cv_repeats": 3,
+  "cv_folds": 5,
+  "bootstrap_resamples": 2000
+}
